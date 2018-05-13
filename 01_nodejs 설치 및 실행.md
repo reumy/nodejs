@@ -5,7 +5,7 @@
 - 윈도우키 + R 로 '실행'을 열어 cmd(터미널)에 접속
 - node \-v 또는 node --version : 버전체크(설치유무 확인)
 - npm -v 또는 npm --version : 버전체크
-	- npm : node.js의 플러그인, 라이브러리(nodejs를 설치하면 자동으로 설치됨)
+	- npm : node.js의 플러그인, 라이브러리 (nodejs를 설치하면 자동으로 설치됨)
 
 ## Nodejs
 - nodejs도 콘솔창을 이용해 디버깅을 함

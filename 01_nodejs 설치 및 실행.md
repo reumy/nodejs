@@ -1,5 +1,5 @@
 ## 설치방법
-- [Node.js](https://nodejs.org/ko/)홈페이지에서 설치
+- [Node.js](https://nodejs.org/ko/) 홈페이지에서 설치
 
 ## 실행
 - 윈도우키 + R 로 '실행'을 열어 cmd(터미널)에 접속

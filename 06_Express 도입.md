@@ -80,7 +80,7 @@ Hello Wold
 
 
 ### Express 설치
-- 홈페이지접속 - 시작하기 - [설치방법](http://expressjs.com/ko/starter/installing.html) 참고
+- 홈페이지접속 - 시작하기 메뉴 - [설치방법](http://expressjs.com/ko/starter/installing.html) 참고
 1. 프로젝트를 위치시킬 디렉토리 설정
 2. 해당 디렉토리에 `npm init`을 통해 npm이 관리하는 패키지로 선언
 3. `npm install express --save`으로 npm이 express 패키지를 다운받아 프로젝트 폴더에 위치시킴

@@ -44,7 +44,7 @@ localhost:3000/route
 
 
 ### 경로
-- 왜 \/public\/route 가 아닐까?
+- 왜 /public/reumy.jpg 가 아닐까?
 ```
 app.get('/route', function(req, res){
   res.send('Hello Router, <img src="/reumy.jpg">')

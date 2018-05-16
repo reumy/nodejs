@@ -5,6 +5,8 @@
 
 ## 정적파일 서비스하기
 - 서버 컴퓨터에 있는 정적인 데이터를 클라이언트 컴퓨터에서 확인할 수 있도록 코드를 추가함
+- [참고](http://expressjs.com/ko/starter/static-files.html)
+
 1. 정적인 파일이 위치할 디렉토리를 지정하는 코드를 입력함
 ```
 app.use(express.static('디렉토리명'));
@@ -45,6 +47,7 @@ localhost:3000/route
 
 ### 경로
 - 왜 /public/reumy.jpg 가 아닐까?
+> Express는 정적 디렉토리에 대해 상대적으로 파일을 검색하기때문에 정적 디렉토리의 이름은 URL의 일부가 아님
 ```
 app.get('/route', function(req, res){
   res.send('Hello Router, <img src="/reumy.jpg">')

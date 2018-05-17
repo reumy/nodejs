@@ -58,8 +58,8 @@ var server = http.createServer(function(req, res){
 ```
 > 어떤 정보를 요청한 사용자에게 응답할것인가에 대한 값은 응답과 관련된 객체를 담고있는 두번째 매개변수(res)를 사용<br/>응답할값은 응답(res)을 가지고 있는 함수에서 진행
 
-- `req(request) : 요청과 관련된 정보를 담고있는 객체`
-- `res(response) : 응답과 관련된 정보를 담고있는 객체`
+- `req(request) : 요청과 관련된 정보를 담고있는 객체 (request 객체가 req 매개변수에 담김)`
+- `res(response) : 응답과 관련된 정보를 담고있는 객체 (response 객체가 res 매개변수에 담김)`
 
 - 실행
 ```

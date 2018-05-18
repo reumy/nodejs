@@ -66,7 +66,9 @@ conn.end();
 
 
 ## SELECT & INSERT
+#### SELECT
 ```
+var sql = 'SELECT * FROM topic';
 conn.query(sql, function(err, rows, fields){
   if(err){
     console.log(err);
@@ -84,7 +86,7 @@ npm
 ```
 > 행의 title들이 출력됨
 
-- INSERT
+#### INSERT
 ```
 var sql = 'INSERT INTO topic (title, description, author) VALUES("Nodejs", "Server side javascript", "egoing")'; 
 conn.query(sql, function(err, rows, fields){
@@ -108,3 +110,32 @@ SELECT id, title FROM topic;
 
 ![0](img/node39.png)
 > Nodejs 값이 추가됨
+
+```
+var sql = 'INSERT INTO topic (title, description, author) VALUES("Express", "Web framework", "duru")'; 
+conn.query(sql, function(err, rows, fields){
+  if(err){
+    console.log(err);
+  } else {
+    console.log(rows.insertId);  // 4
+  }
+});
+```
+> Express가 추가되면서 inserId를 통해 추가된 데이터의 id의 값을 알아낼 수 있음
+- `insertId : 고유한 식별자를 알아낼수있는 식별자`
+
+```
+var sql = 'INSERT INTO topic (title, description, author) VALUES(?, ?, ?)';
+var params = ['Supervisor', 'Watcher', 'graphittie']; 
+conn.query(sql, params, function(err, rows, fields){
+  if(err){
+    console.log(err);
+  } else {
+    console.log(rows.inserId);
+  }
+});
+```
+> 치환자 순서에따라 실제값들을 배열로 생성한 후 그것을 query문의 2번째 인자값으로 전달하면 내부적으로 node-mysql이 치환자를 실제값으로 치환시켜서 실행시킴 (보안실현)
+
+- `? : 치환자`
+- sql 문은 프로그래밍적으로 생성해야 의미가 있음

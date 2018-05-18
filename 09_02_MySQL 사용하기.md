@@ -99,14 +99,16 @@ SELECT * FROM topic WHERE id=2;
 UPDATE topic SET title='npm' WHERE id=2;
 ```
 > id가 2인 데이터의 title과 description을 해당값으로 수정함
+
+- 결과
+
+![01](img/node35.png)
+> id가 2인 행의 title을 NPM에서 npm으로 수정
+
 ```
 UPDATE topic SET title='npm', description='Node Package manager' WHERE id=2;
 ```
 > 여러개를 수정할 경우
-
-- 결과
-
-![01](img/node35.png)<br/>
 
 
 ## 데이터 삭제

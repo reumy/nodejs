@@ -120,7 +120,7 @@ DELETE FROM topic WHERE id=2;
 ![01](img/node37.png)<br/>
 
 ## WHERE의 중요성
-- 만약 `WHERE`을 빼먹는 실수를 한다면?
+#### 만약 `WHERE`을 빼먹는 실수를 한다면?
 - 수정시에 실수
 ```
 UPDATE topic SET title='npm', description='Node Package manager';

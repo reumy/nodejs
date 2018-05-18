@@ -1,3 +1,7 @@
+## MySQL 사용하기
+- Sql 언어로 사용함
+- 중요한 기능 : INSERT(추가), SELECT(조회), UPDATE(수정), DELETE(삭제)
+
 ## 데이터베이스에 접속
 - 인증
 ```
@@ -87,4 +91,46 @@ SELECT * FROM topic WHERE id=2;
 
 - 결과
 
-![01](img/node34.png)
+![01](img/node34.png)<br/>
+
+
+## 데이터 수정
+```
+UPDATE topic SET title='npm' WHERE id=2;
+```
+> id가 2인 데이터의 title과 description을 해당값으로 수정함
+```
+UPDATE topic SET title='npm', description='Node Package manager' WHERE id=2;
+```
+> 여러개를 수정할 경우
+
+- 결과
+
+![01](img/node35.png)<br/>
+
+
+## 데이터 삭제
+```
+DELETE FROM topic WHERE id=2;
+```
+- 결과
+
+![01](img/node37.png)<br/>
+
+## WHERE의 중요성
+- 만약 `WHERE`을 빼먹는 실수를 한다면?
+- 수정시에 실수
+```
+UPDATE topic SET title='npm', description='Node Package manager';
+```
+
+![01](img/node36.png)
+> 모든 정보가 수정되어 같아짐 (정보유실)
+
+- 삭제시에 실수
+```
+DELETE FROM topic;
+```
+> 모든 정보가 삭제됨 (정보유실)
+
+- 하나의 실수로 모든 정보를 유실할 수 있기때문에 DB를 관리할때는 겸손하자!

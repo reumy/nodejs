@@ -101,6 +101,8 @@ conn.query(sql, function(err, rows, fields){
 
 ![0](img/node38.png)<br/>
 > affectedRows를 통해 하나의 행에 영향을 준것과 inserID를 통해 3번째 id에 해당값을 추가했음을 알 수 있음
+- `affectedRows를 통해 처리의 성공유무를 판단할 수 있음`
+
 - 조회
 ```
 SELECT id, title FROM topic;
@@ -141,3 +143,33 @@ conn.query(sql, params, function(err, rows, fields){
 
 - `? : 치환자`
 - sql 문은 프로그래밍적으로 생성해야 의미가 있음
+
+
+## UPDATE & DELETE
+#### UPDATE
+```
+var sql = 'UPDATE topic SET title=?, author=? WHERE id=?';
+var params = ['NPM', 'leechze', 1]; 
+conn.query(sql, params, function(err, rows, fields){
+  if(err){
+    console.log(err);
+  } else {
+    console.log(rows);
+  }
+});
+```
+> 1번의 데이터가 위에 값으로 변경됨
+
+#### DELETE
+```
+var sql = 'DELETE FROM topic WHERE id=?';
+var params = [1]; 
+conn.query(sql, params, function(err, rows, fields){
+  if(err){
+    console.log(err);
+  } else {
+    console.log(rows);
+  }
+});
+```
+> id가 1번인 데이터 행이 삭제됨

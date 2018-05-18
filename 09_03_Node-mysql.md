@@ -137,5 +137,7 @@ conn.query(sql, params, function(err, rows, fields){
 ```
 > 치환자 순서에따라 실제값들을 배열로 생성한 후 그것을 query문의 2번째 인자값으로 전달하면 내부적으로 node-mysql이 치환자를 실제값으로 치환시켜서 실행시킴 (보안실현)
 
+> 조회하면 배열의 값인 Supervisor 구문들이 데이터로 추가됨
+
 - `? : 치환자`
 - sql 문은 프로그래밍적으로 생성해야 의미가 있음

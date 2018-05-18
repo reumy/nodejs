@@ -63,3 +63,48 @@ conn.end();
 > 작업이 끝나면 커넥션을 끊어 접속을 끊음 (ctrl+c가 자동으로 되는것과 같음)
 
 - 실제로는 이렇게 직접 호스트의 비밀번호를 작성하면 안되고 별도의 파일로 빼서 다른사람과 공유하지않는 코드를 관리해야함
+
+
+## SELECT & INSERT
+```
+conn.query(sql, function(err, rows, fields){
+  if(err){
+    console.log(err);
+  } else {
+    for(var i=0; i<rows.length; i++){
+      console.log(rows[i].title);
+    }
+  }
+});
+```
+- 결과
+```
+Javascript
+npm
+```
+> 행의 title들이 출력됨
+
+- INSERT
+```
+var sql = 'INSERT INTO topic (title, description, author) VALUES("Nodejs", "Server side javascript", "egoing")'; 
+conn.query(sql, function(err, rows, fields){
+  if(err){
+    console.log(err);
+  } else {
+    console.log(rows);
+  }
+});
+```
+- 결과
+
+![0](img/node38.png)<br/>
+> affectedRows를 통해 하나의 행에 영향을 준것과 inserID를 통해 3번째 id에 해당값을 추가했음을 알 수 있음
+- 조회
+```
+SELECT id, title FROM topic;
+```
+> id와 title만 조회함
+- 결과
+
+![0](img/node39.png)
+> Nodejs 값이 추가됨
